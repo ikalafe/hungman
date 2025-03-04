@@ -1,4 +1,5 @@
 import random
+import os
 
 from hungman_art import stages
 from hungman_art import logo
@@ -18,6 +19,9 @@ end_of_game = False
 
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
+
+    if guess in display:
+        print(f"You've already guessed {guess}")
 
     for position in range(world_length):
         letter = chosen_world[position]
